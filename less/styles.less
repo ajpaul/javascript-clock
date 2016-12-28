@@ -1,0 +1,54 @@
+@import "colors.less";
+@import "mixins.less";
+
+// ----------------------------
+// GLOBAL STYLES
+// ----------------------------
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 14px;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Roboto', Tahoma, sans-serif;
+}
+
+
+
+// ----------------------------
+// STYLES
+// ----------------------------
+body {
+   background-color: @base;
+     display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background: white;
+  height: 768px;
+  width: 60%;
+  margin: 50px auto;
+
+  .border-radius(5px);
+  .box-shadow(5px, 5px, 6px, 0.3);
+}
+
+
+

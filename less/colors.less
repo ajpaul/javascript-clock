@@ -1,0 +1,13 @@
+@base: #3f6465;
+@second: #2b4644;
+@lighter1: lighten(spin(@base, 5), 10%);
+@lighter2: lighten(spin(@base, 10), 20%);
+@darker1: darken(spin(@base, -5), 10%);
+@darker2: darken(spin(@base, -10), 20%);
+
+/* Implementation */
+.one   {background-color: @base;}
+.two   {background-color: @lighter1;}
+.three {background-color: @lighter2;}
+.four  {background-color: @darker1;}
+.five  {background-color: @darker2;}
