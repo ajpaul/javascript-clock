@@ -82,14 +82,13 @@ main {
   box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
 }
 .buttons .button:hover {
-  background-color: lightgray;
-  color: #fff;
-  -webkit-box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.35);
-  -moz-box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.35);
-  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.35);
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.35);
 }
 .buttons .button-clicked {
-  background-color: lightgreen;
+  background-color: #182624;
+  color: #fff;
 }
 .clocks {
   height: 250px;

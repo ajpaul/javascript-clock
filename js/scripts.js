@@ -6,7 +6,6 @@ var time = function() {
 
     //hours are in military time. I don't want that
     this.hour = (this.hour > 12) ? this.hour - 12 : this.hour;
-    this.analogShowing = false;
 };
 
 time.prototype.getTime = function() {
@@ -15,44 +14,49 @@ time.prototype.getTime = function() {
     document.querySelector(".digital-clock").innerHTML = current;
 };
 
-time.prototype.dissectTime = function() {
+time.prototype.setHands = function() {
     this.now = new Date();
     console.log(this.hour + ", " + this.minutes + ', ' + this.seconds);
+
+    //we need to find the px percentages for the hand animations
+    var hourDegrees = (this.hour / 12) * 360;
+    var minuteDegrees = (this.minutes / 60) * 360;
+    var secondDegrees = (this.seconds / 60) * 360;
+
+    console.log(hourDegrees + ", " + minuteDegrees + ', ' + secondDegrees);
+
+
 };
 
 //how do I call this from the html?
 time.prototype.toggle = function() {
 
-    console.log("toggled");
+    var that = this;
 
     var dc = document.getElementById("digital");
     var ac = document.getElementById("analog");
 
-    if(rightNow.analogShowing) { //show dc
+    if(this.classList.contains('b1')) { //show dc
         ac.style.transform = "translateX(1000px)";
-        dc.style.transform = "translateX(0px)";
-
-        changeDisplay(ac, false, 300);
-        changeDisplay(dc, true, 100);
- 
+        dc.style.transform = "translateX(0px)";        
     }
     else { //show ac
         ac.style.transform = "translateX(0px)";
-        dc.style.transform = "translateX(-1000px)";
-
-        changeDisplay(dc, false, 300);
-        changeDisplay(ac, true, 100);
- 
+        dc.style.transform = "translateX(-1000px)";       
     }
 
-    rightNow.analogShowing = !rightNow.analogShowing;
+    //remove the clicked class from both buttons
+    document.querySelector('.b1').classList.remove('button-clicked');
+    document.querySelector('.b2').classList.remove('button-clicked');    
+    this.classList.add('button-clicked');
+    
 };
 
 
 //driver code
 var rightNow = new time();
 rightNow.getTime();
-rightNow.dissectTime();
+rightNow.setHands();
 console.log(rightNow);
 
 window.setInterval(function() {
@@ -62,15 +66,6 @@ window.setInterval(function() {
 var toggleBtns = document.querySelectorAll(".button");
 
 for (var i = 0; i < toggleBtns.length; i++) {
-    toggleBtns[i].addEventListener('click', rightNow.toggle(), false);
+    toggleBtns[i].onclick = rightNow.toggle;
 }
 
-function changeDisplay(element, bool, timeout) {
-    
-    setTimeout(function(element, bool) {
-        if (bool) 
-            element.style.display = "flex";
-        //else
-            //element.style.display = "none";
-    }, timeout);
-}
