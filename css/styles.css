@@ -39,67 +39,31 @@ main {
   width: 60%;
   margin: 50px auto;
   padding-top: 200px;
+  overflow: hidden;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   -webkit-box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
   box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
-}
-.analog-clock {
-  height: 200px;
-  width: 200px;
-  margin: 0 auto;
-  -webkit-transition: all 200ms ease 0ms;
-  -moz-transition: all 200ms ease 0ms;
-  -ms-transition: all 200ms ease 0ms;
-  -o-transition: all 200ms ease 0ms;
-  transition: all 200ms ease 0ms;
-  border-width: 3px;
-  border-style: solid;
-  border-color: #1a1a1a;
-  -webkit-border-radius: 200px;
-  -moz-border-radius: 200px;
-  border-radius: 200px;
-  -webkit-transform: translate3d(200px, 0, 0);
-  -moz-transform: translate3d(200px, 0, 0);
-  -ms-transform: translate3d(200px, 0, 0);
-  -o-transform: translate3d(200px, 0, 0);
-  transform: translate3d(200px, 0, 0);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-.digital-clock {
-  text-align: center;
-  font-size: 3em;
-  -webkit-transition: all 200ms ease 0ms;
-  -moz-transition: all 200ms ease 0ms;
-  -ms-transition: all 200ms ease 0ms;
-  -o-transition: all 200ms ease 0ms;
-  transition: all 200ms ease 0ms;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 .buttons {
   width: 350px;
-  min-width: 320px;
-  margin: 0 auto;
-  background-color: white;
+  margin: 25px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.button {
+.buttons .button {
   background-color: #e8e8e8;
   color: #182624;
-  width: 150px;
+  width: 250px;
   height: 40px;
   line-height: 40px;
+  margin: 0 10px 0 10px;
   font-size: 1.05em;
   border: none;
+  flex-shrink: 1;
   -webkit-transition: all 200ms ease 0ms;
   -moz-transition: all 200ms ease 0ms;
   -ms-transition: all 200ms ease 0ms;
@@ -117,16 +81,66 @@ main {
   -moz-box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
   box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
 }
-.button:hover {
+.buttons .button:hover {
   background-color: lightgray;
   color: #fff;
   -webkit-box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.35);
   box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.35);
 }
-.button-clicked {
+.buttons .button-clicked {
   background-color: lightgreen;
 }
 .clocks {
-  margin-bottom: 50px;
+  height: 250px;
+}
+.clocks .digital,
+.clocks .analog {
+  width: 100%;
+  min-width: 350px;
+  overflow: hidden;
+  vertical-align: middle;
+  -webkit-transition: all 400ms ease 0ms;
+  -moz-transition: all 400ms ease 0ms;
+  -ms-transition: all 400ms ease 0ms;
+  -o-transition: all 400ms ease 0ms;
+  transition: all 400ms ease 0ms;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clocks .analog {
+  -webkit-transform: translate3d(1000px, 0, 0);
+  -moz-transform: translate3d(1000px, 0, 0);
+  -ms-transform: translate3d(1000px, 0, 0);
+  -o-transform: translate3d(1000px, 0, 0);
+  transform: translate3d(1000px, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.clocks .digital-clock,
+.clocks .analog-clock {
+  width: 100%;
+}
+.clocks .analog-clock {
+  height: 200px;
+  width: 200px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #1a1a1a;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  border-radius: 200px;
+}
+.clocks .digital-clock {
+  text-align: center;
+  font-size: 3em;
 }
