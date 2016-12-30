@@ -139,6 +139,25 @@ main {
   -moz-border-radius: 200px;
   border-radius: 200px;
 }
+.clocks .analog-clock .hand {
+  width: 50%;
+  height: 6px;
+  background-color: #000;
+  position: relative;
+  top: 50%;
+  -webkit-transition: all 100ms ease 0ms;
+  -moz-transition: all 100ms ease 0ms;
+  -ms-transition: all 100ms ease 0ms;
+  -o-transition: all 100ms ease 0ms;
+  transition: all 100ms ease 0ms;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+}
 .clocks .digital-clock {
   text-align: center;
   font-size: 3em;
