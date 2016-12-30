@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 
     <title>HTML5 Clock</title>
-    <meta name="description" content="HTML 5 Clock app">
+    <meta name="description" content="Clock">
     <meta name="author" content="Adam Paul">
 
     <link rel="stylesheet" href="css/styles.css">
@@ -17,7 +17,22 @@
 <body>
 
     <main>
-        <div class="time"></div>
+
+        <section class="clocks">
+            <section class="digital">
+                <div class="digital-clock"></div>
+            </section>
+            <section class="analog">
+                <div class="analog-clock">
+        
+                </div>
+            </section>
+        </section>
+
+        <section class="buttons">
+            <button class="button" onclick="toggle()">DIGITAL</button>
+            <button class="button" onclick="toggle()">ANALOG</button>
+        </section>
     </main>
 
     <!-- Put our scripts at the end of the body -->

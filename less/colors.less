@@ -5,9 +5,12 @@
 @darker1: darken(spin(@base, -5), 10%);
 @darker2: darken(spin(@base, -10), 20%);
 
-/* Implementation */
-.one   {background-color: @base;}
-.two   {background-color: @lighter1;}
-.three {background-color: @lighter2;}
-.four  {background-color: @darker1;}
-.five  {background-color: @darker2;}
+@button: #e8e8e8;
+@buttonDarker: darken(spin(@button, -5), 10%);
+
+
+@white: #fff;
+@lightgray: lightgray;
+
+@black: #000;
+@blackLighter: lighten(spin(@black, 5), 10%);

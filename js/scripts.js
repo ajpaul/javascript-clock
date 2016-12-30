@@ -1,26 +1,41 @@
+var time = function() {
+    this.now = new Date();
+    this.seconds = this.now.getSeconds();
+    this.minutes = this.now.getMinutes();
+    this.hour = this.now.getHours();
 
-
-getTime();
-dissectTime();
-
-window.setInterval(function() {
-    getTime();
-}, 1000);
-
-function getTime() {
-
-    var date = new Date();
-    var now = date.toLocaleTimeString();
-
-    var time = document.querySelector(".time").innerHTML = now;
+    //hours are in military time. I don't want that
+    this.hours = (this.hours > 12) ? this.hours - 12 : this.hours;
+    this.analogShowing = false;
 }
 
-function dissectTime() {
-    var date = new Date();
-    var hours = date.getHours();
-    hours = ( hours > 12) ? hours - 12: hours;
-    var minutes = date.getMinutes();
-    var seconds = date.getSeconds();
+time.prototype.getTime = function() {
+    this.now = new Date();
+    var current = this.now.toLocaleTimeString();
+    document.querySelector(".digital-clock").innerHTML = current;
+}
 
-    console.log(hours + ", " + minutes + ', ' + seconds);
+time.prototype.dissectTime = function() {
+    this.now = new Date();
+    console.log(this.hour + ", " + this.minutes + ', ' + this.seconds);
+}
+
+time.prototype.toggle = function() {
+    alert("toggle");
+}
+
+var lol = new time();
+lol.getTime();
+lol.dissectTime();
+console.log(lol);
+
+window.setInterval(function() {
+    lol.getTime();
+}, 1000);
+
+function toggle() {
+    if(lol.analogShowing)
+        alert("analogShowing");
+    else 
+        alert("digital showing");
 }
