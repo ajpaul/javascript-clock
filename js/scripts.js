@@ -46,21 +46,9 @@ time.prototype.setHands = function() {
 //which will cause the second hand to rotate 360 degrees back to 0.
 time.prototype.updateHands = function(time) {
 
-    var oldHours = this.hourDegrees;
-    var oldMins = this.minuteDegrees;
-    var oldSecs = this.secondDegrees;
-
-    console.log("s: " + oldSecs);
-    var test = Math.round(((time.getSeconds() / 60) * 360) - oldSecs);
-    console.log(test);
-    console.log("----------");
-
-    //we need to find the px percentages for the hand animations
-    this.hourDegrees += Math.round(((time.getHours() / 12) * 360) - oldHours);
-    this.minuteDegrees += Math.round(((time.getMinutes() / 60) * 360) - oldMins);
-    this.secondDegrees += Math.round(((time.getSeconds() / 60) * 360) - oldSecs);
-
-    console.log(this.secondDegrees);
+    this.hourDegrees += (360/43200);
+    this.minuteDegrees += 0.1;
+    this.secondDegrees += 6; //60 sec in a min, 60 min in an hour
 
     this.handHour.style.transform = "rotate(" + this.hourDegrees + "deg)";
     this.handMin.style.transform = "rotate(" + this.minuteDegrees + "deg)";
@@ -101,6 +89,7 @@ window.setInterval(function() {
     rightNow.getTime();
 }, 1000);
 
+//set up click handler for toggle buttons
 var toggleBtns = document.querySelectorAll(".button");
 
 for (var i = 0; i < toggleBtns.length; i++) {
