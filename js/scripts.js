@@ -34,8 +34,6 @@ time.prototype.setHands = function() {
     this.minuteDegrees = Math.round((this.now.getMinutes() / 60) * 360);
     this.secondDegrees = Math.round((this.now.getSeconds() / 60) * 360);
 
-    //console.log(secondDegrees);
-
     this.handHour.style.transform = "rotate(" + this.hourDegrees + "deg)";
     this.handMin.style.transform = "rotate(" + this.minuteDegrees + "deg)";
     this.handSec.style.transform = "rotate(" + this.secondDegrees + "deg)";    
@@ -46,6 +44,7 @@ time.prototype.setHands = function() {
 //which will cause the second hand to rotate 360 degrees back to 0.
 time.prototype.updateHands = function(time) {
 
+    //clock behavior can be hard coded because time always operates the same
     this.hourDegrees += (360/43200);
     this.minuteDegrees += 0.1;
     this.secondDegrees += 6; //60 sec in a min, 60 min in an hour
@@ -77,22 +76,3 @@ time.prototype.toggle = function() {
     document.querySelector('.b2').classList.remove('button-clicked');    
     this.classList.add('button-clicked');
 };
-
-
-//driver code
-var rightNow = new time();
-rightNow.getTime();
-rightNow.setHands();
-console.log(rightNow);
-
-window.setInterval(function() {
-    rightNow.getTime();
-}, 1000);
-
-//set up click handler for toggle buttons
-var toggleBtns = document.querySelectorAll(".button");
-
-for (var i = 0; i < toggleBtns.length; i++) {
-    toggleBtns[i].onclick = rightNow.toggle;
-}
-

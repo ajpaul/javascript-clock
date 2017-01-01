@@ -28,21 +28,17 @@ h5 {
   font-family: 'Roboto', Tahoma, sans-serif;
 }
 body {
-  background-color: #3f6465;
+  background-color: #6996a1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 main {
-  background: #6996a1;
   height: 768px;
-  width: 60%;
+  width: 100%;
   margin: 50px auto;
   padding-top: 200px;
   overflow: hidden;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
 }
 .buttons {
   width: 350px;
