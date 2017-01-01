@@ -43,13 +43,10 @@ main {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  -webkit-box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
-  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
 }
 .buttons {
   width: 350px;
-  margin: 25px auto 0 auto;
+  margin: 45px auto 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,6 +89,7 @@ main {
 }
 .clocks {
   height: 250px;
+  min-width: 400px;
 }
 .clocks .digital,
 .clocks .analog {
@@ -124,6 +122,12 @@ main {
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+.clocks .digital {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5em;
+  position: relative;
+  top: 55%;
 }
 .clocks .digital-clock,
 .clocks .analog-clock {
@@ -161,6 +165,17 @@ main {
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
   transform-origin: 100%;
+}
+.clocks .analog-clock .middle-dot {
+  height: 6px;
+  width: 6px;
+  background-color: #000;
+  position: relative;
+  top: 48%;
+  left: 48%;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
 }
 .clocks .digital-clock {
   text-align: center;
